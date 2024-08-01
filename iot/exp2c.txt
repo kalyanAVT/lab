@@ -1,0 +1,45 @@
+C. Use Arduino to Calculate temperature using a temperature sensor: 
+ 
+• Connect the temperature sensor (e.g. LM35) to the Arduino's analog pins. 
+• Write a sketch in the Arduino IDE to read the sensor data and convert it into 
+a temperature value. 
+• Display the temperature output on the serial monitor or send it to a remote 
+server for storage and processing. 
+• Upload the sketch to the Arduino to get the temperature readings. 
+ 
+Here's an example code that demonstrates this process: 
+
+PROGRAM:
+
+const int TEMP_SENSOR = A0; 
+void setup() { 
+  Serial.begin(9600); 
+} 
+void loop() { 
+  float voltage = analogRead(TEMP_SENSOR) * 0.0048828125; 
+  float temperature = voltage * 100; 
+  Serial.print("Temperature: "); 
+  Serial.print(temperature); 
+  Serial.println("°C"); 
+  delay(1000); 
+} 
+ 
+This code reads the analog voltage from the temperature sensor connected to analog 
+pin A0 and converts it into a temperature value in degrees Celsius. The temperature 
+is displayed on the serial monitor and updated  every 1 second.
+
+OUTPUT:
+
+when the voltage readings is 0.75v the console reading is 
+Temperature : 75.00 °C
+Temperature : 75.00 °C
+Temperature : 75.00 °C
+Temperature : 75.00 °C
+Temperature : 75.00 °C
+
+when the voltage reading is 0.5v the console reading is 
+Temperature : 50.00 °C
+Temperature : 50.00 °C
+Temperature : 50.00 °C
+Temperature : 50.00 °C
+Temperature : 50.00 °C

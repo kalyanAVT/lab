@@ -1,0 +1,38 @@
+C.  Using Node MCU to Calculate temperature using a temperature sensor: 
+ 
+To calculate temperature using a temperature sensor in IoT with NodeMCU, you 
+would need to connect the temperature sensor to the NodeMCU board. Then you 
+would need to write a program in the Lua programming language to read the 
+temperature from the sensor and send it to a remote server. Here is an example of 
+how this can be done: 
+ 
+Connect the temperature sensor to the NodeMCU board. 
+Write a program in Lua to read the temperature from the sensor and store it in a 
+variable. 
+Use the NodeMCU's Wi-Fi capability to send the temperature data to a remote 
+server. 
+On the remote server, process the data and display the temperature on a webpage. 
+ 
+Here is an example code in Lua to read the temperature from a DS18B20 temperature 
+sensor: 
+
+PROGRAM:
+
+ 
+local pin = 2 
+ds18b20.setup(pin)
+function get_temperature() 
+  
+  local temperature = ds18b20.read() 
+   
+  return temperature 
+end 
+print("Temperature: " .. get_temperature() .. "°C") 
+ 
+This is just a basic example and you may need to modify the code based on your 
+specific requirements. You can also use a library such as the DS18B20 library in 
+NodeMCU to simplify the process. 
+
+OUTPUT:
+
+Temperature : 25.5 °C

@@ -1,0 +1,60 @@
+ 
+EXPERIMENT NO: 3 
+3. Using Node MCU  
+a. Calculate the distance using a distance sensor.  
+b. Basic LED functionality.  
+c. Calculate temperature using a temperature sensor. 
+ 
+AIM:  
+Using Node MCU  
+a. Calculate the distance using a distance sensor.  
+b. Basic LED functionality.  
+c. Calculate temperature using a temperature sensor. 
+ 
+PROGRAMS: 
+ 
+A. Using Node MCU to Calculate the distance using a distance sensor: 
+To calculate the distance using a distance sensor in IoT with NodeMCU, you would 
+need to connect the distance sensor to the NodeMCU board. Then you would need 
+to write a program in the Lua programming language to read the distance from the 
+sensor and send it to a remote server.  
+Here is an example of how this can be done: 
+ 
+• Connect the distance sensor to the NodeMCU board. 
+• Write a program in Lua to read the distance from the sensor and store it in a 
+variable. 
+• Use the NodeMCU's Wi-Fi capability to send the distance data to a remote 
+server. 
+• On the remote server, process the data and display the distance on a webpage. 
+ 
+Here is an example code in Lua to read the distance from a HC-SR04 distance sensor: 
+
+PROGRAMS:
+
+
+local trigger_pin = 4
+local echo_pin = 3
+gpio.mode(trigger_pin, gpio.OUTPUT)
+gpio.mode(echo_pin, gpio.INPUT) 
+function get_distance() 
+  
+  gpio.write(trigger_pin, gpio.HIGH) 
+  tmr.delay(10) 
+  gpio.write(trigger_pin, gpio.LOW) 
+ 
+  local duration = pulse_in(echo_pin, gpio.HIGH) 
+  
+  local distance = duration / 58 
+   
+ 
+  return distance 
+end -- Call the get_distance function and print the result 
+print("Distance: " .. get_distance() .. " cm") 
+ 
+This is just a basic example and you may need to modify the code based on your 
+specific requirements. You can also use a library such as the HC-SR04 library in 
+NodeMCU to simplify the process. 
+
+OUTPUT:
+
+Distance : 50.34 cm

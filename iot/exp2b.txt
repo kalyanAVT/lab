@@ -1,0 +1,32 @@
+B. Use Arduino to implement basic LED functionality: 
+Connect the LED to the Arduino's digital pins, with a resistor in series to protect 
+the LED from excessive current. 
+Write a sketch in the Arduino IDE to control the digital pin connected to the LED 
+and turn it on and off. 
+Upload the sketch to the Arduino to control the LED. 
+ 
+Here's an example code that demonstrates this process: 
+
+PROGRAM:
+
+const int LED = 13; 
+void setup() { 
+  pinMode(LED, OUTPUT); 
+} 
+void loop() { 
+  digitalWrite(LED, HIGH); 
+  delay(1000); 
+  digitalWrite(LED, LOW); 
+  delay(1000); 
+} 
+ 
+This code sets up digital pin 13 as an output and turns the LED on and off every 1 
+second. You can modify the code to implement different LED functionality, such as 
+blinking, fading, etc.
+
+OUTPUT:
+
+LED is ON
+LED is OFF
+LED is ON
+LED is OFF

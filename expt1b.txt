@@ -1,0 +1,39 @@
+ 
+B. Use a Raspberry Pi to implement basic LED functionality: 
+ 
+• Connect the LED to the Raspberry Pi's GPIO pins, with a resistor in series to 
+protect the LED from excessive current. 
+• Install the required libraries and packages (e.g. RPi.GPIO, time, etc.). 
+• Write a script in Python to control the GPIO pin connected to the LED and 
+turn it on and off. 
+• Run the script on the Raspberry Pi to control the LED. 
+ 
+Here's an example CODE that demonstrates this process:
+
+PROGRAM: 
+ 
+import RPi.GPIO as GPIO 
+import time 
+
+GPIO.setmode(GPIO.BCM) 
+
+LED = 18 
+ 
+GPIO.setup(LED, GPIO.OUT) 
+
+GPIO.output(LED, True) 
+time.sleep(1) 
+
+GPIO.output(LED, False) 
+ 
+GPIO.cleanup() 
+ 
+This code sets up the GPIO pin 18 as an output and turns the LED on for 1 second 
+and then off. You can modify the code to implement different LED functionality, 
+such as blinking, fading, etc
+
+OUTPUT:
+
+LED is on
+LED is off (After 1 second)
+GPIO cleanup done

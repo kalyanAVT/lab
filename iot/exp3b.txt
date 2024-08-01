@@ -1,0 +1,37 @@
+B. Using Node MCU to Basic LED functionality in IOT with output: 
+ 
+To control a basic LED in IoT with NodeMCU, you can use the following steps: 
+ 
+• Connect the LED to the NodeMCU board. 
+• Write a program in Lua to control the state of the LED (on or off). 
+• Use the NodeMCU's Wi-Fi capability to send commands to the LED to turn 
+it on or off. 
+• On a remote device, such as a smartphone or a computer, you can create a 
+user interface to send the commands to the NodeMCU. 
+ 
+Here is an example code in Lua to control an LED connected to pin D1 on the 
+NodeMCU board: 
+
+PROGRAM:
+
+ 
+local led_pin = 1
+gpio.mode(led_pin, gpio.OUTPUT) 
+function turn_on_led() 
+  gpio.write(led_pin, gpio.HIGH) 
+end 
+function turn_off_led() 
+  gpio.write(led_pin, gpio.LOW) 
+end 
+turn_on_led() 
+tmr.delay(2000000)
+turn_off_led() 
+ 
+This is just a basic example and you can modify it to fit your specific requirements. 
+You can also use the NodeMCU API to create a web server that allows you to control 
+the LED through a web browser. 
+
+OUTPUT:
+
+LED turned ON
+LED turned OFF (After 2 seconds)

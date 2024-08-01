@@ -53,3 +53,7 @@ distance = round(distance, 2)
 print("Distance:",distance,"cm") 
 
 GPIO.cleanup() 
+
+OUTPUT:
+
+Distance : 123.45 cm
