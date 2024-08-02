@@ -1,0 +1,43 @@
+Aim: Write a program in prolog to implement simple facts and Queries 
+ 
+DESCRIPTION: 
+
+• Prolog (Programming in Logic) is a declarative programming 
+language that is based on formal logic.  
+• It is used for tasks such as natural language processing, database 
+management, and expert systems.  
+• In Prolog, you define a set of rules and facts, and then use queries to 
+ask the system about relationships between these rules and facts.  
+• Prolog uses a form of resolution theorem proving to deduce 
+information and provide answers to queries. 
+
+FACTS & QUERIES IN PROLOG: 
+
+Facts in Prolog are represented as predicate/arity statements, where the 
+predicate is the name of the relationship and the arity is the number of 
+arguments the relationship takes. 
+For example,  
+parent(john, jim). 
+Queries in Prolog are expressed as goals, and are used to ask the system 
+about relationships between facts and rules. 
+For example,  
+?- parent(john, jim). 
+ 
+PROGRAM: 
+
+parent(john, jim). 
+parent(jane, jim). 
+parent(jim, anna). 
+parent(jim, tom). 
+parent(tom, lisa). 
+ 
+
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y). 
+ 
+
+ 
+% Query to find the grandparent of Lisa 
+?- grandparent(X, lisa). 
+ 
+% Output 
+X = jim.

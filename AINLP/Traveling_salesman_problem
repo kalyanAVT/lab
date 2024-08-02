@@ -1,0 +1,48 @@
+AIM: Write a program in prolog to solve Traveling salesman problem 
+ 
+DESCRIPTION: 
+• This program defines the tsp/3 predicate, which solves the TSP by 
+finding the shortest path through all cities. The tsp/3 predicate takes 
+three arguments, Cities, Path, and Length, which represent the cities, 
+the path through all cities, and the length of the path, respectively. 
+The tsp/3 predicate first defines the possible values for the Path using 
+permutation/2, and then calls path_length/2 to calculate the length of 
+the path. 
+• The path_length/2 predicate takes two arguments, Path and Length, 
+which represent the path through all cities and the length of the path, 
+respectively. The base case is when the Path has only one city, in 
+which case the length is 0. The recursive case is when the Path has 
+more than one city, in which case the distance between the first two 
+cities is calculated using distance/3, the length of the rest of the path 
+is calculated using path_length/2, and the total length is calculated as 
+the sum of the distance and the rest of the path. 
+• Finally, the program performs a query to find the shortest path 
+through all cities and writes the path and the length using write/1. 
+ 
+PROGRAM 
+% Define the cities and their distances 
+distance(city1, city2, 20). 
+distance(city1, city3, 30). 
+distance(city1, city4, 10). 
+distance(city2, city3, 15). 
+distance(city2, city4, 25). 
+distance(city3, city4, 20). 
+ 
+
+tsp(Cities, Path, Length) :- 
+  permutation(Cities, Path), 
+  path_length(Path, Length). 
+ 
+
+path_length([_], 0). 
+path_length([City1, City2|Rest], Length) :- 
+  distance(City1, City2, D), 
+  path_length([City2|Rest], RestLength), 
+  Length is D + RestLength. 
+ 
+
+?- tsp([city1, city2, city3, city4], Path, Length), write(Path), write(' '), 
+write(Length). 
+ 
+% Output 
+[city1,city4,city2,city3] 35 

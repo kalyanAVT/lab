@@ -1,0 +1,48 @@
+AIM: Write a document in Word Analysis. 
+ 
+DESCRIPTION:  
+
+Word analysis is a subfield of Natural Language Processing (NLP) that 
+focuses on the analysis of individual words and their relationships within a 
+text. It aims to extract meaningful information from text data by analyzing 
+the structure, meaning, and context of words. The goal of word analysis is to 
+understand the meaning of words and how they relate to each other, which is 
+crucial for a variety of NLP tasks, such as text classification, sentiment 
+analysis, named entity recognition, and machine translation, among others. 
+There are several key tasks involved in word analysis, including: 
+
+1. Tokenization: This is the process of dividing text into individual 
+words, known as tokens. Tokens can be words, punctuation marks, symbols, 
+or numbers. 
+
+2. Stemming and Lemmatization: Stemming is the process of 
+reducing words to their root form, while lemmatization is the process of 
+reducing words to their base or dictionary form. These processes are useful 
+for reducing words to their most basic form, which is important for tasks like 
+text classification and sentiment analysis. 
+
+3. Part-of-Speech Tagging: This involves identifying the grammatical 
+role of each word in a sentence, such as noun, verb, adjective, or adverb. 
+Part-of-speech tagging is an important step in understanding the context and 
+meaning of words in a sentence. 
+
+4. Named Entity Recognition: This task involves identifying and 
+categorizing named entities, such as people, organizations, and locations, in a 
+text. Named entity recognition is useful for information extraction and text 
+summarization. 
+ 
+5. Word Sense Disambiguation: This involves identifying the correct 
+sense or meaning of a word, especially in cases where a word can have 
+multiple meanings. Word sense disambiguation is important for tasks such as 
+machine translation and text classification. 
+
+6. Word Embeddings: These are dense vector representations of words 
+that capture their semantic meaning. Word embeddings are learned from 
+large amounts of text data and can be used for tasks such as text 
+classification, sentiment analysis, and information retrieval. 
+
+Overall, word analysis plays a crucial role in NLP and is the foundation for 
+many advanced NLP tasks. By analyzing the structure, meaning, and context 
+of words, NLP systems can extract meaningful information from text data 
+and perform a variety of tasks, such as text classification, sentiment analysis, 
+and machine translation. 

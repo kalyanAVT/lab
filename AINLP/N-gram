@@ -1,0 +1,39 @@
+AIM: Write a document in N-Grams 
+
+DESCRIPTION: 
+
+N-grams are sequences of words or characters in a text. In Natural Language 
+Processing (NLP), N-grams are used as a basic feature representation for text 
+data. An N-gram is a contiguous sequence of N items from a given sample of 
+text or speech. 
+
+N-grams are used in NLP for a variety of tasks, including: 
+
+1. Text classification: N-grams can be used as features to represent the 
+content of a text, which can then be used to train machine learning 
+algorithms for text classification tasks, such as sentiment analysis or spam 
+filtering. 
+
+2. Language modeling: N-grams can be used to model the probability 
+distribution of words in a language, which can be used to predict the next 
+word in a sentence or to generate text. 
+
+3. Spelling correction: N-grams can be used to identify commonly 
+occurring word sequences in a language, which can be used to correct 
+spelling errors in a text. 
+
+4. Named entity recognition: N-grams can be used to identify named 
+entities, such as people, places, and organizations, in a text. 
+N-grams can be represented as either character-level N-grams or word-level 
+N-grams. Character-level N-grams model the probability distribution of 
+individual characters in a language, while word-level N-grams model the 
+probability distribution of sequences of words. 
+
+The choice of the value of N, or the size of the N-gram, can impact the 
+performance of N-gram-based NLP models. Larger values of N can capture 
+more context and meaning in a text, but also require more data to train and 
+may lead to over fitting. Smaller values of N capture fewer contexts, but are 
+less prone to over fitting and can be trained on smaller amounts of data. 
+Overall, N-grams are a simple and effective representation of text data in 
+NLP, and are used in a variety of NLP tasks, including text classification, 
+language modeling, spelling correction, and named entity recognition. 

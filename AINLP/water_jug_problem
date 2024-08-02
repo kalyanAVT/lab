@@ -1,0 +1,46 @@
+AIM: Write a program in prolog for Water jug problem 
+ 
+DESCRIPTION: 
+• This program defines the state/2 predicate, which defines the initial 
+state of the jugs. It then defines the rules for filling, emptying, and 
+transferring water between the jugs using the fill/4, empty/4, and 
+transfer/4 predicates. 
+• The search/2 predicate takes two arguments, State1 and State2, which 
+represent the current state and the next state, respectively. The 
+search/2 predicate uses a disjunction (the; operator) to specify the 
+rules for filling, emptying, and transferring water between the jugs. 
+The search/2 predicate also calls state/2 to ensure that the next state is 
+a valid state. 
+• Finally, the program performs a query to find the solution by calling 
+search/2 with the initial state and the goal state of [2, 0]. The solution 
+is written to the output using write/1. 
+ 
+PROGRAM :
+
+state(0, 0). 
+fill(X, Y, X, Y) :- X < 4, Y < 3. 
+fill(X, Y, 4, Y) :- X < 4. 
+fill(X, Y, X, 3) :- Y < 3. 
+ 
+
+empty(X, Y, 0, Y) :- X > 0. 
+empty(X, Y, X, 0) :- Y > 0. 
+
+transfer(X, Y, X, Y2) :- 
+  X > 0, Y2 is Y + X, Y2 =< 3. 
+transfer(X, Y, X2, Y) :- 
+  Y > 0, X2 is X + Y, X2 =< 4. 
+
+search(State1, State2) :- 
+  ( 
+    fill(State1, State2); 
+    empty(State1, State2); 
+    transfer(State1, State2) 
+  ), 
+  state(State2). 
+ 
+
+?- state(State1), search(State1, [2, 0]), write(State1). 
+ 
+% Output 
+[0, 0] 

@@ -1,0 +1,38 @@
+Aim: Write a program in prolog to solve Tower of Hanoi 
+ 
+DESCRIPTION: 
+ 
+• This program defines the rules for the Tower of Hanoi problem. The 
+move/4 predicate takes four arguments, N, X, Y, and Z, and 
+represents the movement of N discs from the X tower to the Y tower 
+using the Z tower as intermediate. 
+• The base case is move(1, X, Y, _), which writes out the instruction to 
+move the top disk from X to Y. 
+• The recursive case is move(N, X, Y, Z), where N > 1, and M is N-1. 
+In this case, the N discs are moved from X to Y by first moving M 
+discs from X to Z using Y as intermediate, then moving the top disk 
+from X to Y, and finally moving M discs from Z to Y using X as 
+intermediate. 
+• Finally, the query ?- move(3, left, right, center) is used to find the 
+solution for the Tower of Hanoi problem with 3 discs, which writes 
+out the sequence of moves required to move the 3 discs from the left 
+tower to the right tower using the center tower as intermediate. 
+ 
+PROGRAM 
+
+move(1, X, Y, _) :- write('Move top disk from '), write(X), write(' to '), 
+write(Y), nl. 
+move(N, X, Y, Z) :- N > 1, M is N-1, move(M, X, Z, Y), move(1, X, Y, _), 
+move(M, Z, Y, X). 
+ 
+?- move(3, left, right, center). 
+ 
+% Output 
+
+Move top disk from left to right 
+Move top disk from left to center 
+Move top disk from right to center 
+Move top disk from left to right 
+Move top disk from center to left 
+Move top disk from center to right 
+Move top disk from left to right 

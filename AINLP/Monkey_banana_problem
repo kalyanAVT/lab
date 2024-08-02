@@ -1,0 +1,31 @@
+ 
+Aim: Write a program in prolog to solve Monkey banana problem. 
+DESCRIPTION: 
+ 
+• This program defines the rules for the Monkey Banana problem. The 
+on/2 predicate takes two arguments and represents the relationship 
+between the first argument and the second argument, where the first 
+argument is on top of the second argument. 
+• The grasp/2 predicate takes two arguments, monkey and banana, and 
+represents that the monkey is able to grasp the banana. This predicate 
+is defined to be true if the monkey is on the floor and the banana is on 
+the floor. 
+• The climb/2 predicate takes two arguments, monkey and banana, and 
+represents that the monkey is able to climb to the banana. This 
+predicate is defined to be true if the monkey is able to grasp the 
+banana. 
+• Finally, the query ?- climb(monkey, banana) is used to find the 
+solution for the Monkey Banana problem, which should return true. 
+ 
+PROGRAM: 
+ 
+
+on(floor, banana). 
+on(monkey, floor). 
+grasp(monkey, banana) :- on(monkey, floor), on(floor, banana). 
+climb(monkey, banana) :- grasp(monkey, banana). 
+ 
+?- climb(monkey, banana). 
+ 
+% Output 
+true. 

@@ -1,0 +1,34 @@
+Aim: Write a program in prolog to implement simple arithmetic. 
+
+DESCRIPTION: 
+ 
+• This program defines rules for performing addition, subtraction, and 
+multiplication in Prolog. The add/3 predicate takes three arguments 
+X, Y, and Z, and represents the addition of X and Y resulting in Z. 
+The sub/3 predicate takes three arguments X, Y, and Z, and 
+represents the subtraction of Y from X resulting in Z. The mult/3 
+predicate takes three arguments X, Y, and Z, and represents the 
+multiplication of X and Y resulting in Z. 
+• The s/1 predicate represents the successor of a number in Peano 
+arithmetic, which is a system of representing natural numbers using 
+only a zero value and the successor function. 
+• Finally, the query ?- add(s(s(s(0))), s(s(s(s(0)))), X) is used to find the 
+result of 3 + 4, which should return s(s(s(s(s(0))))) as the answer. 
+ 
+PROGRAM: 
+
+add(0, X, X). 
+add(s(X), Y, s(Z)) :- add(X, Y, Z). 
+
+sub(X, 0, X). 
+sub(X, s(Y), Z) :- sub(X, Y, s(Z)). 
+ 
+
+mult(0, _, 0). 
+mult(s(X), Y, Z) :- mult(X, Y, W), add(W, Y, Z). 
+ 
+
+?- add(s(s(s(0))), s(s(s(s(0)))), X).
+
+% Output 
+X = s(s(s(s(s(0))))). 

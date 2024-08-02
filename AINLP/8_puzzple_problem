@@ -1,0 +1,54 @@
+Aim: Write a program in prolog to solve 8 Puzzle problems 
+ 
+DESCRIPTION: 
+ 
+This program defines the initial state of the 8 Puzzle problems with 
+initial_state/1. The solve_puzzle/2 predicate takes two arguments, Node and 
+Solution, and finds the solution for the 8 Puzzle problems by calling breadth 
+first/2. 
+The breadth first/2 predicate takes two arguments, Queue and Solution, and 
+performs a breadth-first search to find the solution. The base case is when the 
+head of the Queue, [Node, Path], is the goal state, in which case [Node, Path] 
+is returned as the solution. The recursive case is when the head of the Queue, 
+[Node, Path], is not the goal state, in which case the legal moves from Node 
+are found using move/2, and the resulting new nodes are added to the end of 
+the queue using findall/3 and append/3. 
+The goal_state/1 predicate defines the goal state for the 8 Puzzle problems. 
+The move/2 predicate takes two arguments, State and NewState, and defines 
+the legal moves for the 8 Puzzle problems by calling blank_square/2 and 
+swap/4. 
+ 
+PROGRAM 
+ 
+ 
+initial_state([2, 8, 3, 1, 6, 4, 7, 0, 5]).
+
+solve_puzzle(Node, Solution) :- breadthfirst([[Node, []]], Solution). 
+breadthfirst([[Node, Path]|_], [Node, Path]) :- goal_state(Node). 
+breadthfirst([[Node, Path]|RestQueue], Solution) :- 
+  findall([NewNode, [Node|Path]], (move(Node, NewNode), 
+not(member(NewNode, [Node|Path]))), NewNodes), 
+  append(RestQueue, NewNodes, Queue), 
+  breadthfirst(Queue, Solution). 
+ 
+goal_state([1, 2, 3, 8, 0, 4, 7, 6, 5]). 
+ 
+move(State, NewState) :- 
+  blank_square(State, BlankSquare), 
+  swap(State, BlankSquare, NewBlankSquare, NewState). 
+ 
+blank_square(State, BlankSquare) :- 
+ nth0(Index, State, 0), 
+  BlankSquare is Index + 1. 
+
+swap(List, BlankSquare, NewBlankSquare, NewList) :- 
+  nth0(BlankSquare, List, Item, Rest), 
+  nth0(NewBlankSquare, NewList, 0, NewRest), 
+  nth0(BlankSquare, NewRest, Item, Rest). 
+ 
+
+?- initial_state(Start), solve_puzzle(Start, Solution), write(Solution). 
+ 
+% Output 
+
+[[1, 2, 3, 8, 0, 4, 7, 6, 5], [2, 8, 3, 1, 6, 4, 7, 0, 5]]
