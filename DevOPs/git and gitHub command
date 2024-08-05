@@ -1,0 +1,36 @@
+Experiment  2 : Explore Git and GitHub commands. 
+
+Git: Git is a version-control system for tracking changes in source code during software 
+development. 
+
+WHat is Bash? : Bash(also know as "Bourne Again SHell) is an implmentation of Shell and allows you 
+to efficiently perform many tasks. 
+
+Features: 
+
+ easily navigate your computer to manage files and folders 
+ run programs that provide more functionality at the command line (e.g. git). 
+ launch programs from specific directories on your computer 
+ use repeatable commands for these tasks across many different operating systems 
+(WIndows, Mac, Linux). 
+
+There are many Version Control Sysytem Tools amongst all Git is popular. 
+
+other tools like:SVN, CVS, mercurial. 
+
+Install Git using below link 
+https://git-scm.com/downloads 
+Choose Windows 
+
+Download and Install 
+Goto Start button and select Git Bash 
+Console window will be opened 
+Try the below Commands: 
+$ Git --version 
+$ mkdir <directory name> 
+$ CD <directory name> 
+$ dir  etc
+
+GitHub 
+SIgnup with Github using below link 
+https://github.com/ 

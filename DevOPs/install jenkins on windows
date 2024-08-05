@@ -1,0 +1,58 @@
+STEPS TO BE FOLLOWED TO INSTALL 'JENKINS' ON WINDOWS 
+
+STEP-1:Install Java Development Kit (JDK): 
+
+Make sure that there is a 'java jdk 17' software version has already 
+installed in the system, 
+if not click the link to install 
+"https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe" 
+
+STEP-2:  Set the Path for the Environmental Variable for JDK: 
+
+STEP-3: Install jenkins using the link 
+"https://www.jenkins.io/download/thank-you-downloading-windows-installer
+stable" 
+
+STEP 4: In the Jenkin Setup screen, click Next. 
+
+STEP-5: Choose the location where you want to have the Jenkins instance 
+installed (default location is C:\Program Files (x86)\Jenkins),  
+then click on Next button. 
+
+STEP-6: For Service logon credentials, choose Logon type as "Run Service 
+as LocalSystem". 
+
+STEP-7: Choose the port available on the system and test it (Recommended 
+is 8080). 
+
+STEP-8: Choose the JDK path and click Next. 
+STEP-9: Click on the Install button. 
+STEP-10: Once install is complete, click Finish. 
+STEP-11: After completing the Jenkins installation process ,Open the web 
+Browser(Chrome) and type 'http://localhost:8080'
+
+STEP-12: To Unlock Jenkins ,administration password has to be entered and 
+you can get this from the link present just above in the form like 
+'C:\Program Files(x86)\Jenkins\secrets\initialAdminPassword'(Not 
+recommended to copy this). 
+
+NOTE:Recommended to copy the link that is present on the screen. 
+STEP-13: Open the highlighted file using Notepad and copy the content of 
+the initialAdminPassword file. 
+
+STEP-14: Paste the password it into browsers pop-up tab 
+(http://localhost:8080/login?form=%2F) and click on Continue button. 
+
+STEP-15: Click on the “Install suggested plugins button” so Jenkins will 
+retrieve and install the essential plugins.
+
+STEP-16:  After all suggested plugins were installed, the “Create First 
+Admin User” panel will show up. 
+
+Fill all the fields with desired account details and hit the “Save and 
+Finish” button. 
+
+NOTE:Remember the Username and Password to login further. 
+We have successfully installed a new Jenkins Server. Hit the “Start using 
+Jenkins” button. 
+Login with the username and password to get started with jenkins. 

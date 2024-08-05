@@ -1,0 +1,38 @@
+EXPERIMENT   NO:   5
+  Demonstrate   continuous   integration   anddevelopment using Jenkins
+
+Aim:  Demonstrate   continuous   integration   and   development   usingJenkins
+
+DESCRIPTION:Continuous   Integration   (CI)   and   Continuous   Development   (CD)   areimportant   practices   in   software   development   that   can   be   achieved   using Jenkins.
+Here's   an   example   of   how   you   can   demonstrate   CI/CD   using
+Jenkins:
+Create a simple Java application:
+Create   a   simple   Java   application  that   you   want   to   integrate   withJenkins
+
+ The   application   should   have   some   basic   functionality,   such   asprinting "Hello World" or performing simple calculations
+Commit the code to a Git repository:Create a Git repository for the application and commit the code to therepository
+
+Make  sure   that  the   Git   repository   is   accessible  from   the   Jenkinsserver
+Create a Jenkins job:Log in to the Jenkins web interface and create a new job
+
+Configure   the   job   to   build   the   Java   application   from   the   Gitrepository
+
+Specify the build triggers, such as building after every commit to therepository
+
+Build the application:Trigger a build of the application using the Jenkins job
+
+The build should compile the code, run any tests, and produce anexecutable jar file
+
+Monitor the build: Monitor the build progress in the Jenkins web interface
+
+The build should show the build log, test results, and the status of thebuild
+Deploy the application:If  the build is successful, configure the Jenkins job to deploy theapplication to a production environment
+
+The   deployment   could   be   as   simple   as  copying   the  jar   file   to   aproduction server or using a more sophisticated deployment process,such as using a containerization technology like Docker
+
+Repeat the process: Repeat the process for subsequent changes to the application.
+Jenkins should automatically build and deploy the changes   to   theproduction environment
+
+This is a basic example of how you can use Jenkins to demonstrate CI/CD insoftware development
+ In a real-world scenario, you would likely have morecomplex   requirements,   such  as   multiple   environments,   different   types   oftests, and a more sophisticated deployment process
+ However, this exampleshould give you a good starting point for using Jenkins for CI/CD in yoursoftware development projects
